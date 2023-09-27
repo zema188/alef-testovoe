@@ -1,30 +1,46 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+    <div class="wrapper">
+        <header class="header-w">
+            <div class="header">
+                <router-link to="/">
+                    <img src="@/assets/icons/logo.svg" alt="ALEF">
+                </router-link>
+                <nav>
+                    <router-link to="/">Форма</router-link>
+                    <router-link to="/preview">Превью</router-link>
+                </nav>
+            </div>
+        </header>
+        <router-view/>
+        <footer>
+            all rights reserved
+        </footer>
+    </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style lang="scss" scoped>
+.wrapper {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column
 }
-
+.header-w {
+    border-bottom: 1px solid #969696;
+    padding: 20px 15px;
+    margin-bottom: 30px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 1400px;
+}
 nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 </style>
